@@ -1,3 +1,8 @@
+Copyright (c) 2015 by Davidson Tuggle <wdtuggleiv@gmail.com>
+
+This file is free software; you can redistribute it and/or modify it under the terms of either the GNU General Public License version 2 or the GNU Lesser General Public License version 2.1, both as published by the Free Software Foundation.
+
+
 # simpleservernotifier
 A relatively simple program that pings a server, and notifies the user via email if said server is offline.
 
@@ -6,6 +11,11 @@ For the Arduino Platform
 
 # PLEASE READ THE FOLLOWING:
 This program is explicitly intended for home use only. There is (currently) no security measurements implemented in the code, so SMTP authentication can be potentially compromised by malicious users. Please do not use credentials that might be used in other potentially important servers/systems. Thank you.
+
+# What it does
+This program allows an Arduino UNO paired with an Ethernet Shield to ping a server periodically to check if it is online or not. If a ping request fails, depending on the situation, it will send an email to the user alerting him or her that the server is offline. This program will also detect if its own internet connection is lost. After a user specified amount of time of outage, when the internet comes back, the program will email the user alerting him or her about the outage. 
+
+
 
 # Getting Started
 Before attempting to compile and upload this code to your Arduino device, you should take into account a few key notes:
@@ -18,25 +28,25 @@ Before attempting to compile and upload this code to your Arduino device, you sh
 
 Once you have access to an SMTP server, you can now edit the code. All of the data that you need to change is located at the top of the source, underneath the "MODIFY THESE TO YOUR REQUIREMENTS" comment. At the very least, you must change the following variables:
 
-char server[]
+char server[] - The SMTP server
 
-char senderEmail[]
+char senderEmail[] - The sender's email address
 
-char rcptEmail[]
+char rcptEmail[] - The receiver's email address
 
-char userB64[]
+char userB64[] - Username in Base64 for the SMTP server
 
-char passB64[]
+char passB64[] - Password in Base64 for the SMTP server
 
 It is recommended that you change the following network variables as well:
 
-byte mac[] 
+byte mac[] - MAC addresss
 
-IPAddress ip(192,168,1,3);    
+IPAddress ip(192,168,1,3); - Local IP Address
 
-IPAddress gateway(192,168,1,1);
+IPAddress gateway(192,168,1,1); - Local Gateway
 
-IPAddress subnet(255,255,255,0);
+IPAddress subnet(255,255,255,0); - Subnet Mask
 
 For userB64 and passB64, the string you set these to *must* be encoded in Base64. There are plenty of free tools online that let you encode regular username/password text into their equivalent Base64 representations. Please note that Base64 encoding is *NOT* encryption...it does not offer any sort of security benefit; it is merely for data transfer purposes.
 
