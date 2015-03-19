@@ -22,9 +22,12 @@ Before attempting to compile and upload this code to your Arduino device, you sh
 
 1. This code has only been tested on the Arduino Uno and Ethernet Shield hardware.
 
-2. You must modify the code before attempting to run it on the hardware. See below for specifics
+2. You must download and install the ICMP ping library by Blake Foster in order to compile the code.
+You can download and follow directions to install this library here: https://github.com/BlakeFoster/Arduino-Ping
+ 
+3. You must modify the code before attempting to run it on the hardware. See below for specifics
 
-3. Be sure you have a method to send mail via an SMTP server. I used smtpcorp.com, which offers free accounts with 20 emails per day, to test the code.
+4. Be sure you have a method to send mail via an SMTP server. I used smtpcorp.com, which offers free accounts with 20 emails per day, to test the code.
 
 Once you have access to an SMTP server, you can now edit the code. All of the data that you need to change is located at the top of the source, underneath the "MODIFY THESE TO YOUR REQUIREMENTS" comment. At the very least, you must change the following variables:
 
