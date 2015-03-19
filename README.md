@@ -10,7 +10,7 @@ For the Arduino Platform
 
 
 # PLEASE READ THE FOLLOWING:
-This program is explicitly intended for home use only. There are (currently) no security measurements implemented in the code, so SMTP authentication can be potentially compromised by malicious users. Please do not use credentials that might be used in other potentially important servers/systems. Thank you.
+This program is explicitly intended for home use only. There are (currently) no security measurements implemented in the code, so SMTP authentication can potentially be compromised by malicious users. Please do not use credentials that might be used in other potentially important servers/systems. Thank you.
 
 # What it does
 This program allows an Arduino UNO paired with an Ethernet Shield to ping a server periodically to check if it is online or not. If a ping request fails, depending on the situation, it will send an email to the user alerting him or her that the server is offline. This program will also detect if its own internet connection is lost. After a user specified amount of time of outage, when the internet comes back, the program will email the user alerting him or her about the outage. 
