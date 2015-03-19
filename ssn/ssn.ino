@@ -179,7 +179,7 @@ byte sendEmail(int type)
   Serial.println(F("Initiating login"));
      
   // Say hello to the server...it is common practice to use your external IP as the parameter
-  client.println(F("ehlo 72.188.87.0"));
+  client.println(F("ehlo 9.8.7.6"));
   if(!eRcv()) return 0;
       
   // For most servers, authentication is required to reduce relay spam
